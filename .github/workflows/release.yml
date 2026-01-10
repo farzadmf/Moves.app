@@ -14,7 +14,11 @@ jobs:
 
       - name: Build
         run: |
-          xcodebuild -project Moves.xcodeproj -scheme Moves -configuration Release -derivedDataPath build CODE_SIGN_IDENTITY="-" CODE_SIGNING_REQUIRED=NO -quiet
+          xcodebuild -project Moves.xcodeproj -scheme Moves -configuration Release -derivedDataPath build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO -quiet
+
+      - name: Re-sign app bundle
+        run: |
+          codesign --force --deep --sign - build/Build/Products/Release/Moves.app
 
       - name: Zip app
         run: |

@@ -5,6 +5,7 @@ import Defaults
 class WindowHandler {
   var monitors: [Any?] = []
   var window: AccessibilityElement?
+  var skipFirstEvent = false
 
   var intention: Intention = .idle {
     didSet { intentionChanged(self.intention) }
@@ -39,6 +40,7 @@ class WindowHandler {
     }
 
     self.window = window
+    self.skipFirstEvent = true
 
     if Defaults[.bringToFront] {
       try? app?.setAttribute(.frontmost, value: true)
@@ -86,6 +88,11 @@ class WindowHandler {
   }
 
   private func mouseMoved(_ event: NSEvent) {
+    if skipFirstEvent {
+      skipFirstEvent = false
+      return
+    }
+
     switch intention {
     case .move: move(event)
     case .resize: resize(event)

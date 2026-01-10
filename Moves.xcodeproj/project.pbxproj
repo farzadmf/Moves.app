@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4215A970241C385800FA8CE8 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4215A96F241C385800FA8CE8 /* Modifiers.swift */; };
 		4215A972241D446C00FA8CE8 /* WindowHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4215A971241D446C00FA8CE8 /* WindowHandler.swift */; };
+		42FL0AT1ND1CAT0R00002 /* FloatingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FL0AT1ND1CAT0R00001 /* FloatingIndicator.swift */; };
 		4215A974241D463600FA8CE8 /* Intention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4215A973241D463600FA8CE8 /* Intention.swift */; };
 		4215A976241D809600FA8CE8 /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4215A975241D809600FA8CE8 /* Mouse.swift */; };
 		4215A978241D8AD100FA8CE8 /* AccessibilityElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4215A977241D8AD100FA8CE8 /* AccessibilityElement.swift */; };
@@ -68,6 +69,7 @@
 /* Begin PBXFileReference section */
 		4215A96F241C385800FA8CE8 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		4215A971241D446C00FA8CE8 /* WindowHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowHandler.swift; sourceTree = "<group>"; };
+		42FL0AT1ND1CAT0R00001 /* FloatingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingIndicator.swift; sourceTree = "<group>"; };
 		4215A973241D463600FA8CE8 /* Intention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intention.swift; sourceTree = "<group>"; };
 		4215A975241D809600FA8CE8 /* Mouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
 		4215A977241D8AD100FA8CE8 /* AccessibilityElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityElement.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				4215A979241D94D000FA8CE8 /* StatusItem.swift */,
 				42FD3E03242DD54D00E4E639 /* String+matchingStrings.swift */,
 				4215A971241D446C00FA8CE8 /* WindowHandler.swift */,
+				42FL0AT1ND1CAT0R00001 /* FloatingIndicator.swift */,
 				42BA5BB92DD368DD00399BF4 /* WindowTemplate.swift */,
 				42B2A1562418317400CDEA5E /* Assets.xcassets */,
 				4215A996241EDB5E00FA8CE8 /* Excludes.xib */,
@@ -311,6 +314,7 @@
 			files = (
 				4215A97F241D975E00FA8CE8 /* Defaults.swift in Sources */,
 				4215A972241D446C00FA8CE8 /* WindowHandler.swift in Sources */,
+				42FL0AT1ND1CAT0R00002 /* FloatingIndicator.swift in Sources */,
 				4215A98C241E1A8500FA8CE8 /* ExcludesViewController.swift in Sources */,
 				4215A976241D809600FA8CE8 /* Mouse.swift in Sources */,
 				42FD3E04242DD54D00E4E639 /* String+matchingStrings.swift in Sources */,

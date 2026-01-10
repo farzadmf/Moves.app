@@ -1,5 +1,6 @@
 scheme := "Moves"
 project := "Moves.xcodeproj"
+version := "1.0.3"
 
 # List available commands
 default:
@@ -49,3 +50,8 @@ rebuild: clean build
 # Show build settings
 @settings:
     xcodebuild -scheme {{scheme}} -showBuildSettings
+
+# Tag and push a release
+@tag:
+    git tag v{{version}}
+    git push origin v{{version}}

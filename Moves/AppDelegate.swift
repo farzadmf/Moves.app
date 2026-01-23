@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   let statusItem = StatusItem()
   let windowHandler = WindowHandler()
+  private var previousApp: NSRunningApplication?
 
   lazy var preferencesWindowController = SettingsWindowController(
     panes: [
@@ -24,6 +25,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   )
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
+    // Track frontmost app changes
+    NSWorkspace.shared.notificationCenter.addObserver(
+      self,
+      selector: #selector(activeAppChanged),
+      name: NSWorkspace.didActivateApplicationNotification,
+      object: nil
+    )
+
     Task {
       for await value in Defaults.updates(.showInMenubar) {
         if value {
@@ -69,7 +78,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 
   func applicationDidBecomeActive(_ notification: Notification) {
-    preferencesWindowController.show()
+    // Only show preferences if no windows are visible (user clicked dock icon or similar)
+    if NSApp.windows.filter({ $0.isVisible }).isEmpty {
+      preferencesWindowController.show()
+    }
+  }
+
+  @objc func activeAppChanged(_ notification: Notification) {
+    // Track the last non-Moves app that was active
+    if let app = notification.userInfo?[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication,
+       app.bundleIdentifier != Bundle.main.bundleIdentifier {
+      previousApp = app
+    }
   }
 
   func showPreferences() {
@@ -80,9 +100,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   // MARK: - URLs
 
   func application(_ application: NSApplication, open urls: [URL]) {
+    ActiveWindow.overrideApp = previousApp
     for url in urls {
       handleURL(url)
     }
+    ActiveWindow.overrideApp = nil
+    previousApp?.activate()
   }
 
   private func handleURL(_ url: URL) {

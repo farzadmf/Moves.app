@@ -5,6 +5,7 @@ import Defaults
 class WindowHandler {
   var monitors: [Any?] = []
   var window: AccessibilityElement?
+  var skipFirstEvent = false
   private var resizeCorner: ResizeCorner?
 
   var intention: Intention = .idle {
@@ -41,6 +42,7 @@ class WindowHandler {
     }
 
     self.window = window
+    self.skipFirstEvent = true
     if intention == .resize && Defaults[.resizeFromClosestCorner] {
       resizeCorner = resolveResizeCorner(for: window, at: NSEvent.mouseLocation)
     }
@@ -91,6 +93,11 @@ class WindowHandler {
   }
 
   private func mouseMoved(_ event: NSEvent) {
+    if skipFirstEvent {
+      skipFirstEvent = false
+      return
+    }
+
     switch intention {
     case .move: move(event)
     case .resize: resize(event)

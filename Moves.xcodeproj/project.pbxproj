@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42F10A012F4E000000000001 /* FloatingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F10A012F4E000000000002 /* FloatingIndicator.swift */; };
 		4215A970241C385800FA8CE8 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4215A96F241C385800FA8CE8 /* Modifiers.swift */; };
 		4215A972241D446C00FA8CE8 /* WindowHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4215A971241D446C00FA8CE8 /* WindowHandler.swift */; };
 		4215A974241D463600FA8CE8 /* Intention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4215A973241D463600FA8CE8 /* Intention.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		42F10A012F4E000000000002 /* FloatingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingIndicator.swift; sourceTree = "<group>"; };
 		4215A96F241C385800FA8CE8 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		4215A971241D446C00FA8CE8 /* WindowHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowHandler.swift; sourceTree = "<group>"; };
 		4215A973241D463600FA8CE8 /* Intention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intention.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				42BA5BB72DD335C000399BF4 /* ActiveWindow.swift */,
 				42B2A1522418317300CDEA5E /* AppDelegate.swift */,
 				4215A97E241D975E00FA8CE8 /* Defaults.swift */,
+				42F10A012F4E000000000002 /* FloatingIndicator.swift */,
 				42A1B2C42F4D000000000002 /* main.swift */,
 				4215A973241D463600FA8CE8 /* Intention.swift */,
 				4215A96F241C385800FA8CE8 /* Modifiers.swift */,
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F10A012F4E000000000001 /* FloatingIndicator.swift in Sources */,
 				4215A97F241D975E00FA8CE8 /* Defaults.swift in Sources */,
 				4215A972241D446C00FA8CE8 /* WindowHandler.swift in Sources */,
 				4215A976241D809600FA8CE8 /* Mouse.swift in Sources */,

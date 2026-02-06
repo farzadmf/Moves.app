@@ -23,9 +23,12 @@ class WindowHandler {
     resizeCorner = nil
 
     if intention == .idle {
+      FloatingIndicator.shared.hide()
       self.window = nil
       return
     }
+
+    FloatingIndicator.shared.show(for: intention)
 
     let loc = Mouse.location()
     guard let window = AccessibilityElement.at(loc)?.window else { return }
